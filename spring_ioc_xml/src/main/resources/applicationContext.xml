@@ -3,5 +3,17 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean id="studentOne" class="com.cyan.spring.pojo.Student"></bean>
-    <!--    <bean id="studentTwo" class="com.cyan.spring.pojo.Student"></bean>-->
+
+    <bean id="studentTwo" class="com.cyan.spring.pojo.Student">
+        <!--
+        setter注入
+        property：通过成员变量的set方法及进行赋值
+        name；设置需要赋值的属性名
+        value：设置为属性的值
+        -->
+        <property name="sid" value="1001"></property>
+        <property name="sname" value="张三"></property>
+        <property name="age" value="22"></property>
+        <property name="gender" value="男"></property>
+    </bean>
 </beans>

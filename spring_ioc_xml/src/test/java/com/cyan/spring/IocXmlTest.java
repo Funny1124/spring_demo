@@ -39,4 +39,14 @@ public class IocXmlTest {
 
 
     }
+
+    //setter注入
+    @Test
+    public void testDI() {
+        //获取ioc容器
+        ApplicationContext ioc = new ClassPathXmlApplicationContext("applicationContext.xml");
+        //获取bean
+        Student student = ioc.getBean("studentTwo", Student.class);
+        System.out.println(student);
+    }
 }
