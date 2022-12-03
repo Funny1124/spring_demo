@@ -23,4 +23,35 @@
         <constructor-arg value="23"></constructor-arg>
         <constructor-arg value="女"></constructor-arg>
     </bean>
+
+    <!--
+    特殊值
+    赋值为 null ，应插入<null></null>
+    赋值为 < 应插入&lt; > 则为 &gt; 及对应特殊字符的 xml实体
+    还可以使用CDATA区，CDATA区内容会原样解析
+    -->
+    <bean id="studentFour" class="com.cyan.spring.pojo.Student">
+        <property name="sid" value="1001"></property>
+        <!--        <property name="sname" value="&lt;王五&gt;"></property>-->
+        <property name="sname">
+            <value><![CDATA[<王五>]]></value>
+        </property>
+        <property name="age" value="22"></property>
+        <property name="gender">
+            <null></null>
+        </property>
+    </bean>
+
+    <bean id="studentFive" class="com.cyan.spring.pojo.Student">
+        <property name="sid" value="1006"></property>
+        <property name="sname" value="赵六"></property>
+        <property name="age" value="24"></property>
+        <property name="gender" value="1006"></property>
+        <property name="clazz" ref="clazz"></property>
+        <!-- ref 引用ioc 容器中另一个bean 的id-->
+    </bean>
+    <bean id="clazz" class="com.cyan.spring.pojo.Clazz">
+        <property name="cid" value="001"></property>
+        <property name="cName" value="最强班"></property>
+    </bean>
 </beans>

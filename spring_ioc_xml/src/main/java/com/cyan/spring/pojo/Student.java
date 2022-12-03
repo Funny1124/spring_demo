@@ -1,10 +1,11 @@
 package com.cyan.spring.pojo;
 
 public class Student implements Person {
-     private Integer sid;
-     private String sname;
-     private Integer age;
-     private String gender;
+    private Integer sid;
+    private String sname;
+    private Integer age;
+    private String gender;
+    private Clazz clazz;
 
     public Student() {
     }
@@ -14,6 +15,14 @@ public class Student implements Person {
         this.sname = sname;
         this.age = age;
         this.gender = gender;
+    }
+
+    public Student(Integer sid, String sname, Integer age, String gender, Clazz clazz) {
+        this.sid = sid;
+        this.sname = sname;
+        this.age = age;
+        this.gender = gender;
+        this.clazz = clazz;
     }
 
     public Integer getSid() {
@@ -48,6 +57,14 @@ public class Student implements Person {
         this.gender = gender;
     }
 
+    public Clazz getClazz() {
+        return clazz;
+    }
+
+    public void setClazz(Clazz clazz) {
+        this.clazz = clazz;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -55,6 +72,7 @@ public class Student implements Person {
                 ", sname='" + sname + '\'' +
                 ", age=" + age +
                 ", gender='" + gender + '\'' +
+                ", clazz=" + clazz +
                 '}';
     }
 }

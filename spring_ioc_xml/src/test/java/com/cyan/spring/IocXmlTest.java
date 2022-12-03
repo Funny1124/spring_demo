@@ -48,7 +48,7 @@ public class IocXmlTest {
         //获取bean
 //        Student student = ioc.getBean("studentTwo", Student.class);
 //        System.out.println(student);
-        Student student = ioc.getBean("studentThree", Student.class);
+        Student student = ioc.getBean("studentFive", Student.class);
         System.out.println(student);
     }
 }
