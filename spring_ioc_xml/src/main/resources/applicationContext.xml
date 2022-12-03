@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="studentOne" class="com.cyan.spring.pojo.Student"></bean>
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+    <bean id="studentOne" class="com.cyan.spring.pojo.Student">
+        <!--
+        setter注入
+        property：通过成员变量的set方法及进行赋值
+        name；设置需要赋值的属性名
+        value：设置为属性的值
+        -->
+        <property name="sid" value="1000"></property>
+        <property name="sname" value="法外狂徒张三"></property>
+        <property name="age" value="22"></property>
+        <property name="gender" value="未知"></property>
+    </bean>
 
     <bean id="studentTwo" class="com.cyan.spring.pojo.Student">
         <!--
@@ -70,8 +81,24 @@
         </property>
 
     </bean>
-    <!--    <bean id="clazz" class="com.cyan.spring.pojo.Clazz">-->
-    <!--        <property name="cid" value="001"></property>-->
-    <!--        <property name="cName" value="最强班"></property>-->
-    <!--    </bean>-->
+
+    <bean id="clazz" class="com.cyan.spring.pojo.Clazz">
+        <property name="cid" value="001"></property>
+        <property name="cName" value="最强班"></property>
+        <!--        <property name="students">-->
+        <!--            <list>-->
+        <!--                <ref bean="studentOne"></ref>-->
+        <!--                <ref bean="studentTwo"></ref>-->
+        <!--                <ref bean="studentFive"></ref>-->
+        <!--            </list>-->
+        <!--        </property>-->
+        <property name="students" ref="studentList"></property>
+    </bean>
+    <!--    设置一个集合类型的bean，需要只用 util 的约束-->
+    <util:list id="studentList">
+        <ref bean="studentOne"></ref>
+        <ref bean="studentTwo"></ref>
+        <ref bean="studentFive"></ref>
+    </util:list>
+
 </beans>

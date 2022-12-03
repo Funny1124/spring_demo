@@ -1,5 +1,6 @@
 package com.cyan.spring;
 
+import com.cyan.spring.pojo.Clazz;
 import com.cyan.spring.pojo.Person;
 import com.cyan.spring.pojo.Student;
 import org.junit.Test;
@@ -48,7 +49,11 @@ public class IocXmlTest {
         //获取bean
 //        Student student = ioc.getBean("studentTwo", Student.class);
 //        System.out.println(student);
-        Student student = ioc.getBean("studentFive", Student.class);
-        System.out.println(student);
+
+//        Student student = ioc.getBean("studentFive", Student.class);
+//        System.out.println(student);
+
+        Clazz clazz = ioc.getBean("clazz", Clazz.class);
+        System.out.println(clazz);
     }
 }
