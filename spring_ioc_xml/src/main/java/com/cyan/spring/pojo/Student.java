@@ -1,12 +1,14 @@
 package com.cyan.spring.pojo;
 
+import java.util.Arrays;
+
 public class Student implements Person {
     private Integer sid;
     private String sname;
     private Integer age;
     private String gender;
     private Clazz clazz;
-
+    private String[] bobby;
     public Student() {
     }
 
@@ -23,6 +25,15 @@ public class Student implements Person {
         this.age = age;
         this.gender = gender;
         this.clazz = clazz;
+    }
+
+    public Student(Integer sid, String sname, Integer age, String gender, Clazz clazz, String[] bobby) {
+        this.sid = sid;
+        this.sname = sname;
+        this.age = age;
+        this.gender = gender;
+        this.clazz = clazz;
+        this.bobby = bobby;
     }
 
     public Integer getSid() {
@@ -65,6 +76,14 @@ public class Student implements Person {
         this.clazz = clazz;
     }
 
+    public String[] getBobby() {
+        return bobby;
+    }
+
+    public void setBobby(String[] bobby) {
+        this.bobby = bobby;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -73,6 +92,7 @@ public class Student implements Person {
                 ", age=" + age +
                 ", gender='" + gender + '\'' +
                 ", clazz=" + clazz +
+                ", bobby=" + Arrays.toString(bobby) +
                 '}';
     }
 }

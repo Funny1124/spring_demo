@@ -60,6 +60,15 @@
             </bean>
         </property>
 
+        <property name="bobby">
+            <array>
+                <!--                若为类，则<ref bean="xxx"></ref>-->
+                <value>吃饭</value>
+                <value>睡觉</value>
+                <value>打游戏</value>
+            </array>
+        </property>
+
     </bean>
     <!--    <bean id="clazz" class="com.cyan.spring.pojo.Clazz">-->
     <!--        <property name="cid" value="001"></property>-->
