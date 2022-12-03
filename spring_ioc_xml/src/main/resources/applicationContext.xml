@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
     <bean id="studentOne" class="com.cyan.spring.pojo.Student">
         <!--
@@ -80,10 +81,10 @@
             </array>
         </property>
         <property name="teacherMap" ref="teacherMap">
-<!--            <map>-->
-<!--                <entry key="001" value-ref="teacherOne"></entry>-->
-<!--                <entry key="002" value-ref="teacherTwo"></entry>-->
-<!--            </map>-->
+            <!--            <map>-->
+            <!--                <entry key="001" value-ref="teacherOne"></entry>-->
+            <!--                <entry key="002" value-ref="teacherTwo"></entry>-->
+            <!--            </map>-->
         </property>
     </bean>
 
@@ -117,4 +118,8 @@
         <entry key="001" value-ref="teacherOne"></entry>
         <entry key="002" value-ref="teacherTwo"></entry>
     </util:map>
+
+    <bean id="studentSix" class="com.cyan.spring.pojo.Student"
+          p:sid="1006" p:sname="李华" p:teacherMap-ref="teacherMap">
+    </bean>
 </beans>
