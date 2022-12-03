@@ -1,6 +1,7 @@
 package com.cyan.spring.pojo;
 
 import java.util.Arrays;
+import java.util.Map;
 
 public class Student implements Person {
     private Integer sid;
@@ -9,6 +10,8 @@ public class Student implements Person {
     private String gender;
     private Clazz clazz;
     private String[] bobby;
+    private Map<String, Teacher> teacherMap;
+
     public Student() {
     }
 
@@ -34,6 +37,16 @@ public class Student implements Person {
         this.gender = gender;
         this.clazz = clazz;
         this.bobby = bobby;
+    }
+
+    public Student(Integer sid, String sname, Integer age, String gender, Clazz clazz, String[] bobby, Map<String, Teacher> teacherMap) {
+        this.sid = sid;
+        this.sname = sname;
+        this.age = age;
+        this.gender = gender;
+        this.clazz = clazz;
+        this.bobby = bobby;
+        this.teacherMap = teacherMap;
     }
 
     public Integer getSid() {
@@ -84,6 +97,14 @@ public class Student implements Person {
         this.bobby = bobby;
     }
 
+    public Map<String, Teacher> getTeacherMap() {
+        return teacherMap;
+    }
+
+    public void setTeacherMap(Map<String, Teacher> teacherMap) {
+        this.teacherMap = teacherMap;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -93,6 +114,7 @@ public class Student implements Person {
                 ", gender='" + gender + '\'' +
                 ", clazz=" + clazz +
                 ", bobby=" + Arrays.toString(bobby) +
+                ", teacherMap=" + teacherMap +
                 '}';
     }
 }

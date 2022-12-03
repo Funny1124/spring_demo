@@ -50,10 +50,10 @@ public class IocXmlTest {
 //        Student student = ioc.getBean("studentTwo", Student.class);
 //        System.out.println(student);
 
-//        Student student = ioc.getBean("studentFive", Student.class);
-//        System.out.println(student);
+        Student student = ioc.getBean("studentFive", Student.class);
+        System.out.println(student);
 
-        Clazz clazz = ioc.getBean("clazz", Clazz.class);
-        System.out.println(clazz);
+//        Clazz clazz = ioc.getBean("clazz", Clazz.class);
+//        System.out.println(clazz);
     }
 }
