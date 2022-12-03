@@ -46,12 +46,23 @@
         <property name="sid" value="1006"></property>
         <property name="sname" value="赵六"></property>
         <property name="age" value="24"></property>
-        <property name="gender" value="1006"></property>
-        <property name="clazz" ref="clazz"></property>
+        <property name="gender" value="男"></property>
         <!-- ref 引用ioc 容器中另一个bean 的id-->
+        <!--        <property name="clazz" ref="clazz"></property>-->
+        <!--        级联 需提前赋值-->
+        <!--        <property name="clazz.cid" value="002"></property>-->
+        <!--        <property name="clazz.cName" value="苍英1717"></property>-->
+        <property name="clazz">
+            <!--            内部bean-->
+            <bean id="clazzInner" class="com.cyan.spring.pojo.Clazz">
+                <property name="cid" value="001"></property>
+                <property name="cName" value="苍英1717"></property>
+            </bean>
+        </property>
+
     </bean>
-    <bean id="clazz" class="com.cyan.spring.pojo.Clazz">
-        <property name="cid" value="001"></property>
-        <property name="cName" value="最强班"></property>
-    </bean>
+    <!--    <bean id="clazz" class="com.cyan.spring.pojo.Clazz">-->
+    <!--        <property name="cid" value="001"></property>-->
+    <!--        <property name="cName" value="最强班"></property>-->
+    <!--    </bean>-->
 </beans>
