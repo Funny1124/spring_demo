@@ -9,4 +9,5 @@
         <property name="password" value="libai@password"></property>
         <property name="age" value="36"></property>
     </bean>
+    <bean id="beanPostProcessor" class="com.cyan.spring.process.MyBeanPostProcessor"></bean>
 </beans>
